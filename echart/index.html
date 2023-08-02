@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>echarts可视化</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>电商用户数据可视化展板-ECharts</h1>
+      <div class="showTime">当前时间：2020年3月17-0时54分14秒</div>
+      <h3></h3>
+      <script>
+        var t = null;
+        var url= location.search;
+        var str = url.substr(1);
+        strs = str.split("&");
+        t = setTimeout(time, 1000); //開始运行
+        function time() {
+          clearTimeout(t); //清除定时器
+          dt = new Date();
+          var y = dt.getFullYear();
+          var mt = dt.getMonth() + 1;
+          var day = dt.getDate();
+          var h = dt.getHours(); //获取时
+          var m = dt.getMinutes(); //获取分
+          var s = dt.getSeconds(); //获取秒
+          document.querySelector(".showTime").innerHTML = "当前时间：" + y + "年" + mt + "月" + day + "日-" + h + "时" + m + "分" + s + "秒";
+          t = setTimeout(time, 1000); //设定定时器，循环运行
+        }
+      </script>
+      <script>
+        
+      </script>
+    </header>
+    <section class="mainbox">
+      <div class="column">
+        <div class="panel bar">
+          <h2>
+            各类商品均价统计
+          </h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel line">
+          <h2>评分分布折线图</h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel pie">
+          <h2>饼形图-商品价格分布</h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="no">
+          <div class="no-hd">
+            <ul>
+              <li>5929</li>
+              <li>19</li>
+            </ul>
+          </div>
+          <div class="no-bd">
+            <ul>
+              <li>统计数量</li>
+              <li>种类数量</li>
+            </ul>
+          </div>
+        </div>
+        <div class="map">
+          <div class="chart"></div>
+          <div class="map1"></div>
+          <div class="map2"></div>
+          <div class="map3"></div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="panel bar1">
+          <h2>各品牌均价统计</h2>
+          <div style="float: left; margin-left: 170px;margin-right: 10px;">
+            <form action="" method="post">
+              <select id="select_name">
+                <option>手机</option>
+                <option>笔记本电脑</option>
+                <option>耳机</option>
+              </select>
+            </form>
+          </div>
+          <div><button id="button_form">确定</button></div>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel line1">
+          <h2>各品牌性价比雷达图</h2>
+          <div style="float: left; margin-left: 170px;margin-right: 10px;">
+            <form action="" method="post">
+              <select id="select_name2">
+                <option>手机</option>
+                <option>笔记本电脑</option>
+                <option>电视</option>
+              </select>
+            </form>
+          </div>
+          <div><button id="button_form2">确定</button></div>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel pie1">
+          <h2>价格/销量散点图</h2>
+          <div style="float: left; margin-left: 170px;margin-right: 10px;">
+            <form action="" method="post">
+              <select id="select_name3">
+                <option>手机</option>
+                <option>笔记本电脑</option>
+                <option>耳机</option>
+                <option>平板</option>
+                <option>电视</option>
+              </select>
+            </form>
+          </div>
+          <div><button id="button_form3">确定</button></div>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+    </section>
+    <script src="js/flexible.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/myMap.js"></script>
+  </body>
+</html>
